@@ -20,6 +20,7 @@ builder.Services.AddAuthentication(options =>
         options.ResponseType = "code";
         options.Scope.Add("openid");
         options.Scope.Add("profile");
+        options.Scope.Add("myapi");
         options.GetClaimsFromUserInfoEndpoint = true;
         options.SaveTokens = true;
     });
