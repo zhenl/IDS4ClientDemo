@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDS4Client", "IDS4Client\IDS4Client.csproj", "{74B6E17D-C340-4455-93EC-B8D892EE4119}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDS4WebApi", "IDS4WebApi\IDS4WebApi.csproj", "{87C70FCE-FA86-46BB-94DF-27E40F615BA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{74B6E17D-C340-4455-93EC-B8D892EE4119}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74B6E17D-C340-4455-93EC-B8D892EE4119}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74B6E17D-C340-4455-93EC-B8D892EE4119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87C70FCE-FA86-46BB-94DF-27E40F615BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87C70FCE-FA86-46BB-94DF-27E40F615BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87C70FCE-FA86-46BB-94DF-27E40F615BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87C70FCE-FA86-46BB-94DF-27E40F615BA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
