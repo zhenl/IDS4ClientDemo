@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNetCore.Authentication
+
+@{
+     var auth =  await Context.AuthenticateAsync();
+
+     var token = auth.Properties.Items[".Token.access_token"];
+}
+<div id="result"">
+
+</div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer " + "@token");
+                },
+                url: "http://localhost:5153/WeatherForecast",
+                type: 'get',
+                success: function (res) {
+                    console.log(res);
+                    for(var i=0;i<res.length;i++){
+                        $("#result").append("<div>" +res[i].date + " : " + res[i].temperatureC + "</div>");
+                    }
+                    alert("success");
+                },
+                error: function (err) {
+                    console.log(err);
+                    alert(err.statusText);
+                }
+            });
+        });
+    </script>
+}

@@ -26,6 +26,12 @@ builder.Services.AddAuthorization(options =>
 });
 //增加完成
 
+builder.Services.AddCors(option => option.AddPolicy("cors",
+     policy => policy.AllowAnyHeader()
+     .AllowAnyMethod()
+     .AllowCredentials()
+     .WithOrigins(new[] { "https://localhost:7002" })));
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -39,6 +45,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors("cors");
 
 app.UseHttpsRedirection();
 app.UseAuthentication(); //增加代码

@@ -25,6 +25,12 @@ namespace IDS4Client.Controllers
             return View();
         }
 
+        public IActionResult JSClient()
+        {
+
+            return View();
+        }
+
         public async Task<IActionResult> GetApiData()
         {
             var auth = await HttpContext.AuthenticateAsync();
