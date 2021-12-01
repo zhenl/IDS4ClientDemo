@@ -2,7 +2,6 @@
 
 @{
      var auth =  await Context.AuthenticateAsync();
-
      var token = auth.Properties.Items[".Token.access_token"];
 }
 <div id="result"">
