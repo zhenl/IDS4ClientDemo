@@ -46,4 +46,6 @@ static async Task GetTokenAndCallApiAsync()
         var content = await response.Content.ReadAsStringAsync();
         Console.WriteLine(JArray.Parse(content));
     }
+
+    Console.ReadLine();
 }
