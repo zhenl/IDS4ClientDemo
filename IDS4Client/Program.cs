@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.OAuth.Claims;
 using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,12 +24,17 @@ builder.Services.AddAuthentication(options =>
         options.Scope.Add("profile");
         options.Scope.Add("myapi");
         options.GetClaimsFromUserInfoEndpoint = true;
+        options.TokenValidationParameters.RoleClaimType = "role";
+        options.TokenValidationParameters.NameClaimType = "name";
+        //options.ClaimActions.Add(new JsonKeyClaimAction("role", null, "role"));
+        options.ClaimActions.MapUniqueJsonKey("role", "role");
+        options.ClaimActions.MapUniqueJsonKey("nickname", "nickname");
         options.SaveTokens = true;
     });
-//增加结束
+    //增加结束
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+    // Add services to the container.
+    builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 

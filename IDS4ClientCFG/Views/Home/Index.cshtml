@@ -22,3 +22,15 @@
         <dd>@prop.Value</dd>
     }
 </dl>
+
+<span>@User.Identity.Name</span>
+
+
+@if(User.IsInRole("AdminRole"))
+{
+    <span>AdminUser</span>
+}else
+{
+    <span>NoAdmin</span>
+
+}
